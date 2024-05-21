@@ -29,7 +29,7 @@ Begin Web Test
     ${option}    Set Variable If    '${browser}'=='chrome'
     ...    add_experimental_option("excludeSwitches", ["enable-logging"])
     ...    '${browser}'=='edge'
-    ...    add_argument("--headless"); add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_experimental_option("excludeSwitches", ["enable-logging"])
+    ...    add_argument("--headless"); add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--remote-debugging-port=9222"); add_experimental_option("excludeSwitches", ["enable-logging"])
     ...    ${None}
     # This argument service_log_path=${{os.path.devnull}} stops firefox
     # from creating a new geckodriver service log file every time
