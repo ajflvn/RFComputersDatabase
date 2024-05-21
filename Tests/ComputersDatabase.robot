@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Ejercicios de automatización de frontal con Robot Framework
+Documentation       Ejercicios de automatizacion de frontal con Robot Framework
 ...                 - Para probar todos los navegadores, ejecutar ``run-tests.bat``
 Metadata            Author    Alberto Florido
 
