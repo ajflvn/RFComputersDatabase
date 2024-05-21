@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-16T16:04:40.791882" rpa="false" schemaversion="5">
+<suite id="s1" name="ComputersDatabase" source="C:\Robot_Learning\ComputersDatabase\Tests\ComputersDatabase.robot">
+<test id="s1-t1" name="First Name Should be ACE" line="31">
+<kw name="Begin Web Test" owner="ComputersDatabaseWeb" type="SETUP">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>'${browser}' in ['chrome', 'firefox', 'edge']</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-04-16T16:04:40.976104" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2024-04-16T16:04:40.976104" level="INFO">${option} = None</msg>
+<var>${option}</var>
+<arg>'${browser}' in ['chrome', 'edge']</arg>
+<arg>add_experimental_option("excludeSwitches", ["enable-logging"])</arg>
+<arg>${None}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2024-04-16T16:04:40.976104" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-16T16:04:40.976104" level="INFO">Opening browser 'firefox' to base url 'https://computer-database.gatling.io/computers/'.</msg>
+<msg time="2024-04-16T16:04:40.976104" level="INFO">Browser driver log file created to: C:\Robot_Learning\ComputersDatabase\Results\firefox\nul</msg>
+<msg time="2024-04-16T16:04:41.830114" level="WARN">Problem reading geckodriver versions: error sending request for url (https://raw.githubusercontent.com/SeleniumHQ/selenium/trunk/common/geckodriver/geckodriver-support.json): error trying to connect: dns error: Host desconocido. (os error 11001). Using latest geckodriver version</msg>
+<msg time="2024-04-16T16:04:41.830114" level="WARN">There was an error managing geckodriver (error sending request for url (https://github.com/mozilla/geckodriver/releases/latest): error trying to connect: dns error: Host desconocido. (os error 11001)); using driver found in the cache</msg>
+<msg time="2024-04-16T16:04:41.830114" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event): error trying to connect: dns error: Host desconocido. (os error 11001)</msg>
+<msg time="2024-04-16T16:04:43.050645" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>${WEB_URL}</arg>
+<arg>${browser}</arg>
+<arg>options=${option}</arg>
+<arg>service_log_path=${{os.path.devnull}}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-04-16T16:04:40.976104" elapsed="2.074541">Execution terminated by signal</status>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>${WEB_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-04-16T16:04:43.050645" elapsed="0.000000"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-04-16T16:04:43.050645" elapsed="0.000000"/>
+</kw>
+<arg>${WEB_BROWSER}</arg>
+<doc>Prepara el navegador recibido por argumento para los
+tests. Concretamente, se comprueba la validez del argumento, se
+preparan las opciones pertinentes, se abre el navegador a la URL,
+se comprueba el titulo y se maximiza la ventana</doc>
+<status status="FAIL" start="2024-04-16T16:04:40.976104" elapsed="2.074541">Execution terminated by signal</status>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-04-16T16:04:43.050645" elapsed="0.000000"/>
+</kw>
+<doc>Cargar la página y verificar que el primer valor del
+campo _Computer name_ de la lista es ACE</doc>
+<tag>1</tag>
+<status status="FAIL" start="2024-04-16T16:04:40.976104" elapsed="2.074541">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="Next Page Has Specific First Row Values" line="37">
+<doc>Cargar la página, darle a Next, para ir a la página 2 y
+verificar que el primer valor del campo _Computer Name_ de la lista
+es ASCI White, _Introduced_=01/01/2001, _Discontinued_=01/01/2006 y
+_Company_=IBM</doc>
+<tag>2</tag>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-04-16T16:04:43.050645" elapsed="0.015387">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t3" name="Filter By Name &quot;ASCI&quot; Should Show 6 Results" line="49">
+<doc>Cargar la página, introducir ASCI en el campo
+de filtro y darle al botón _Filter by Name_. Verificar que el
+resultado obtenido es 6</doc>
+<tag>3</tag>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-04-16T16:04:43.066032" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="Create New Computer With Empty Data Should Fail" line="57">
+<doc>Cargar la página y darle al botón _Add a new computer_.
+Darle al botón _Create this computer_. Verificar que sale un mensaje
+de error _Failed to refine type : Predicate isEmpty() did not fail_</doc>
+<tag>4</tag>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-04-16T16:04:43.066032" elapsed="0.015623">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="Create New Computer With Valid Data Should Work" line="66">
+<doc>Cargar la página y darle al botón _Add a new computer_.
+Completar valores del formulario (nombre, introduced, discontinued,
+company). Darle al botón _Create this computer_. Verificar que sale
+un mensaje de EXITO _Done ! Computer xxxxx has been created_</doc>
+<tag>5</tag>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-04-16T16:04:43.081655" elapsed="2.222290">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>Ejercicios de automatización de frontal con Robot Framework
+- Para probar todos los navegadores, ejecutar ``run-tests.bat``</doc>
+<meta name="Author">Alberto Florido</meta>
+<status status="FAIL" start="2024-04-16T16:04:40.791882" elapsed="4.512063"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="1" skip="0">1</stat>
+<stat pass="0" fail="1" skip="0">2</stat>
+<stat pass="0" fail="1" skip="0">3</stat>
+<stat pass="0" fail="1" skip="0">4</stat>
+<stat pass="0" fail="1" skip="0">5</stat>
+</tag>
+<suite>
+<stat pass="0" fail="5" skip="0" id="s1" name="ComputersDatabase">ComputersDatabase</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-04-16T16:04:41.830114" level="WARN">Problem reading geckodriver versions: error sending request for url (https://raw.githubusercontent.com/SeleniumHQ/selenium/trunk/common/geckodriver/geckodriver-support.json): error trying to connect: dns error: Host desconocido. (os error 11001). Using latest geckodriver version</msg>
+<msg time="2024-04-16T16:04:41.830114" level="WARN">There was an error managing geckodriver (error sending request for url (https://github.com/mozilla/geckodriver/releases/latest): error trying to connect: dns error: Host desconocido. (os error 11001)); using driver found in the cache</msg>
+<msg time="2024-04-16T16:04:41.830114" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event): error trying to connect: dns error: Host desconocido. (os error 11001)</msg>
+</errors>
+</robot>
