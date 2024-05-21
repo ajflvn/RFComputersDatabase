@@ -26,8 +26,10 @@ Begin Web Test
     Should Be True    '${browser}' in ['chrome', 'firefox', 'edge']
     # This option stops a certain warning from being logged to console
     # (DevTools listening ...) on chromium based browsers
-    ${option}    Set Variable If    '${browser}' in ['chrome', 'edge']
+    ${option}    Set Variable If    '${browser}'=='chrome'
     ...    add_experimental_option("excludeSwitches", ["enable-logging"])
+    ...    '${browser}'=='edge'
+    ...    add_argument("--remote-debugging-port=9222")
     ...    ${None}
     # This argument service_log_path=${{os.path.devnull}} stops firefox
     # from creating a new geckodriver service log file every time
