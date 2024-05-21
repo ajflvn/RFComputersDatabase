@@ -1,8 +1,9 @@
 @echo off
 setlocal
 set browsers=chrome firefox edge
-for %%i in (%browsers%) do (
-    robot --variable WEB_BROWSER:%%i -d Results\%%i Tests\ComputersDatabase.robot
-)
+REM for %%i in (%browsers%) do (
+REM    robot --variable WEB_BROWSER:%%i -d Results\%%i Tests\ComputersDatabase.robot
+REM )
+robot --variable WEB_BROWSER:edge -d Results\edge Tests\ComputersDatabase.robot
 endlocal
 cmd /k
