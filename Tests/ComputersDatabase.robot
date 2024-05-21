@@ -29,13 +29,13 @@ ${T5_COMPANY}                       Digital Equipment Corporation
 
 *** Test Cases ***
 First Name Should be ${T1_FIRST_NAME}
-    [Documentation]    Cargar la página y verificar que el primer valor del
+    [Documentation]    Cargar la pagina y verificar que el primer valor del
     ...    campo _Computer name_ de la lista es ${T1_FIRST_NAME}
     [Tags]    1
     First Result Computer name Should Be ${T1_FIRST_NAME}
 
 Next Page Has Specific First Row Values
-    [Documentation]    Cargar la página, darle a Next, para ir a la página 2 y
+    [Documentation]    Cargar la pagina, darle a Next, para ir a la pagina 2 y
     ...    verificar que el primer valor del campo _Computer Name_ de la lista
     ...    es ASCI White, _Introduced_=01/01/2001, _Discontinued_=01/01/2006 y
     ...    _Company_=IBM
@@ -47,7 +47,7 @@ Next Page Has Specific First Row Values
     First Result Company Should Be ${T2_COMPANY}
 
 Filter By Name "${T3_FILTER_TEXT}" Should Show ${T3_FILTER_EXPECTED_RESULTS} Results
-    [Documentation]    Cargar la página, introducir ${T3_FILTER_TEXT} en el campo
+    [Documentation]    Cargar la pagina, introducir ${T3_FILTER_TEXT} en el campo
     ...    de filtro y darle al botón _Filter by Name_. Verificar que el
     ...    resultado obtenido es ${T3_FILTER_EXPECTED_RESULTS}
     [Tags]    3
@@ -55,8 +55,8 @@ Filter By Name "${T3_FILTER_TEXT}" Should Show ${T3_FILTER_EXPECTED_RESULTS} Res
     There Should Be ${T3_FILTER_EXPECTED_RESULTS} Results
 
 Create New Computer With Empty Data Should Fail
-    [Documentation]    Cargar la página y darle al botón _Add a new computer_.
-    ...    Darle al botón _Create this computer_. Verificar que sale un mensaje
+    [Documentation]    Cargar la pagina y darle al boton _Add a new computer_.
+    ...    Darle al boton _Create this computer_. Verificar que sale un mensaje
     ...    de error _Failed to refine type : Predicate isEmpty() did not fail_
     [Tags]    4
     Go To Add New Computer
@@ -64,9 +64,9 @@ Create New Computer With Empty Data Should Fail
     Verify Error Message While Creating
 
 Create New Computer With Valid Data Should Work
-    [Documentation]    Cargar la página y darle al botón _Add a new computer_.
+    [Documentation]    Cargar la pagina y darle al boton _Add a new computer_.
     ...    Completar valores del formulario (nombre, introduced, discontinued,
-    ...    company). Darle al botón _Create this computer_. Verificar que sale
+    ...    company). Darle al boton _Create this computer_. Verificar que sale
     ...    un mensaje de EXITO _Done ! Computer xxxxx has been created_
     [Tags]    5
     Go To Add New Computer
