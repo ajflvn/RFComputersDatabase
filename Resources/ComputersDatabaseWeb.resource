@@ -29,7 +29,7 @@ Begin Web Test
     ${option}    Set Variable If    '${browser}' in ['chrome']
     ...    add_experimental_option("excludeSwitches", ["enable-logging"])
     ...    '${browser}'=='edge'
-    ...    add_argument("--remote-debugging-pipe"); add_argument("--disable-gpu"); add_argument("enable-features=NetworkServiceInProcess"); add_argument("disable-features=NetworkService"); add_argument("user-data-dir=\"C:\\\\fakeUserData\"")
+    ...    add_argument("--remote-debugging-pipe"); add_argument("--disable-gpu"); add_argument("enable-features=NetworkServiceInProcess"); add_argument("disable-features=NetworkService"); add_argument("user-data-dir=C:\\\\fakeUserData")
     ...    ${None}
     # This argument service_log_path=${{os.path.devnull}} stops firefox
     # from creating a new geckodriver service log file every time
