@@ -31,7 +31,7 @@ Begin Web Test
     ...    '${browser}'=='edge'
     ...    add_argument("--remote-debugging-pipe"); add_argument("--disable-gpu"); add_argument("enable-features=NetworkServiceInProcess"); add_argument("disable-features=NetworkService"); add_argument("user-data-dir=C:\\fakeUserData"); add_argument("--disable-blink-features=AutomationControlled"); add_experimental_option("excludeSwitches", ["enable-automation"])
     ...    ${None}
-    Log    ${option}
+    Log to console    ${option}
     # This argument service_log_path=${{os.path.devnull}} stops firefox
     # from creating a new geckodriver service log file every time
     Open Browser    ${WEB_URL}    ${browser}
