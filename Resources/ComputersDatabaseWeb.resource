@@ -25,6 +25,5 @@ Begin Web Test
     [Arguments]    ${browser}
     Should Be True    '${browser}' in ['chrome', 'firefox', 'edge']
     Open Browser    ${WEB_URL}    ${browser}
-    ...    options=${option}
     Title Should Be    ${WEB_TITLE}
     Maximize Browser Window
