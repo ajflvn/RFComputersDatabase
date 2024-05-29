@@ -26,7 +26,7 @@ Begin Web Test
     Should Be True    '${browser}' in ['chrome', 'firefox', 'edge']
     # This option stops a certain warning from being logged to console
     # (DevTools listening ...) on chromium based browsers
-    ${option}    Set Variable If    '${browser}' in ['chrome']
+    ${option}    Set Variable If    '${browser}' in ['chrome', 'edge']
     ...    add_experimental_option("excludeSwitches", ["enable-logging"])
     ...    ${None}
     # Log to console    Option: ${option}
