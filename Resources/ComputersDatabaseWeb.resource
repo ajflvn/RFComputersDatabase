@@ -28,8 +28,6 @@ Begin Web Test
     # (DevTools listening ...) on chromium based browsers
     ${option}    Set Variable If    '${browser}' in ['chrome']
     ...    add_experimental_option("excludeSwitches", ["enable-logging"])
-    ...    '${browser}'=='edge'
-    ...    add_argument("--remote-debugging-pipe"); add_argument("--disable-gpu"); add_argument("enable-features=NetworkServiceInProcess"); add_argument("disable-features=NetworkService"); add_argument("user-data-dir=C:${/}fakeUserData"); add_argument("--disable-blink-features=AutomationControlled"); add_experimental_option("excludeSwitches", ["enable-automation"])
     ...    ${None}
     # Log to console    Option: ${option}
     # This argument service_log_path=${{os.path.devnull}} stops firefox
